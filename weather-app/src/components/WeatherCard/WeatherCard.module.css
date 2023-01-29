@@ -1,0 +1,43 @@
+.container {
+  max-width: 400px !important;
+}
+
+.card {
+  background-color: rgb(20, 33, 58);
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.control_btn {
+  background-color: inherit;
+  padding: 3px 10px;
+  border: 0;
+}
+
+.appear {
+  animation: appearing 500ms ease-out forwards;
+}
+
+.disappear {
+  animation: disappear 500ms ease-out forwards;
+}
+
+@keyframes appearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

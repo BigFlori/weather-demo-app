@@ -1,0 +1,9 @@
+.dot {
+    background-color: rgb(221, 221, 221);
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-inline: 0.5rem;
+    vertical-align: middle;
+}

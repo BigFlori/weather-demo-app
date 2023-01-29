@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  color: rgb(221, 221, 221);
+  transition: all 0.2s ease-out;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+a:hover,
+a:active {
+  color: rgb(64, 167, 199) !important;
+}
+
+.h8 {
+  font-size: 0.8rem;
+}
+
+.pb-10 {
+  padding-bottom: 15rem !important;
+}
