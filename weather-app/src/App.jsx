@@ -52,7 +52,7 @@ function App() {
             Mentett helységek
           </h5>
         )}
-        <Row className='justify-content-center'>
+        <Row className='justify-content-center gap-5'>
           {savedCities.map((item, index) => (
             <WeatherCard
               cityData={item}
