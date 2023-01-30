@@ -62,10 +62,11 @@ const WeatherCard = (props) => {
   useEffect(() => {
     fetchWeather(
       {
-        url: `http://localhost:8000/weather?lat=${lat}&lon=${lon}`,
+        // url: `http://localhost:8000/weather?lat=${lat}&lon=${lon}`,
+        url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_KEY}&lang=hu`,
       },
       (data) => {
-        console.log(data);
+        // console.log(data);
         const weather = {
           temperature: Math.round(data.main.temp - 272.15), //Kelvinből celsiusba
           feels_like: Math.round(data.main.feels_like - 272.15),
@@ -106,7 +107,7 @@ const WeatherCard = (props) => {
       props.onRemoveCity(city);
     }, 500);
   };
-  
+
   return (
     <div className={`${!props.saved && "mx-auto"} ${classes.container}`}>
       <div
