@@ -13,6 +13,13 @@ function App() {
 
   const [savedCities, setSavedCities] = useState([]);
 
+  useEffect(() => {
+    const storedCities = localStorage.getItem("savedCities");
+    if (storedCities) {
+      setSavedCities(JSON.parse(storedCities));
+    }
+  }, []);
+
   const cityDataChangeHandler = (city) => {
     setCityData(city);
   };
@@ -23,8 +30,14 @@ function App() {
         prevState.some((item) => item.city === cityData.city) ||
         prevState.length >= 3
       ) {
+        //Nem kerül hozzáadásra a város mert létezik vagy elérte a maximum menthető számot
         return [...prevState];
       } else {
+        //Város hozzáadásra kerül a mentettek közé
+        localStorage.setItem(
+          "savedCities",
+          JSON.stringify([...prevState, cityData])
+        );
         return [...prevState, cityData];
       }
     });
@@ -32,9 +45,8 @@ function App() {
 
   const removeCityHandler = (city) => {
     setSavedCities((prevState) => {
-      let filteredArray = prevState.filter(
-        (item) => item.city !== city
-      );
+      let filteredArray = prevState.filter((item) => item.city !== city);
+      localStorage.setItem("savedCities", JSON.stringify(filteredArray));
       return filteredArray;
     });
   };
