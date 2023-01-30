@@ -63,7 +63,9 @@ const WeatherCard = (props) => {
     fetchWeather(
       {
         // url: `http://localhost:8000/weather?lat=${lat}&lon=${lon}`,
-        url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_KEY}&lang=hu`,
+        url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${
+          import.meta.env.VITE_KEY
+        }&lang=hu`,
       },
       (data) => {
         // console.log(data);
@@ -137,6 +139,7 @@ const WeatherCard = (props) => {
                 <button
                   onClick={props.onSaveCity}
                   className={classes.control_btn}
+                  aria-label="Save city"
                 >
                   <FontAwesomeIcon icon={faPlus} size='lg' />
                 </button>
@@ -144,6 +147,7 @@ const WeatherCard = (props) => {
                 <button
                   className={classes.control_btn}
                   onClick={removeCityHandler}
+                  aria-label="Remove saved city"
                 >
                   <FontAwesomeIcon icon={faTrash} size='lg' />
                 </button>
@@ -151,6 +155,7 @@ const WeatherCard = (props) => {
               <button
                 className={classes.control_btn}
                 onClick={() => fetchWeather()}
+                aria-label='Refresh'
               >
                 <FontAwesomeIcon
                   icon={faArrowsRotate}
@@ -163,6 +168,7 @@ const WeatherCard = (props) => {
               <img
                 src={`http://openweathermap.org/img/wn/${weatherData.iconid}@2x.png`}
                 style={{ maxWidth: "100px", maxHeight: "100px" }}
+                alt={weatherData.description}
               />
               <span className='text-center'>{weatherData.description}</span>
             </div>

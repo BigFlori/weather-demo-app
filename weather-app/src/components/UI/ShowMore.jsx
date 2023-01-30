@@ -16,6 +16,7 @@ const ShowMore = (props) => {
     <button
       className={`${classes.show_btn} ${!props.collapsed && classes.transformDown}`}
       onClick={props.onCollapse}
+      aria-label="Expand/collapse"
     >
       <FontAwesomeIcon icon={!props.collapsed ? faAngleDown : faAngleUp} size='lg' />
     </button>

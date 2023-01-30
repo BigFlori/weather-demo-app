@@ -73,7 +73,7 @@ const CityInput = (props) => {
               onChange={cityChangeHandler}
               onKeyDown={handleKeyPress}
             />
-            <Button size='md' onClick={searchHandler} className='px-3'>
+            <Button size='md' onClick={searchHandler} className='px-3' aria-label="Search">
               {isLoading ? (
                 <FontAwesomeIcon icon={faSpinner} spin />
               ) : (
